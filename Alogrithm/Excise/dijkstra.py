@@ -1,38 +1,42 @@
 
 def Dijkstra(n: int, u: int, dist: float, p: int, c: int):
-    # n: point number, u: source point, c[n][n]: matrix,
+    # n: point number count, u: source point, c[n][n]: matrix,
     # dist[i]: min. distance between origin point to point i
     # previous point on the chian of min. distance
-    s = [0]*n
+    S = [0]*n
     for i in range(n):
         dist[i] = c[u][i]
-        s[i] = False
+        S[i] = False
         if(dist[i] == 9999):
             p[i] = -1
         else:
            p[i] = u
-    s[u] = True
+    print(dist)
+    print(p)
+    S[u] = True
     for i in range(n):
         temp = 9999
         t = u
+        # 找到距离最短的顶点j,加入到S集合内
         for j in range(n):
-            if(not s[j] and dist[j] < temp):
+            if(not S[j] and dist[j] < temp): #不在S集合内且当前最小
                 t = j
-                temp = dist[j]
+                temp = dist[j]  #temp 存储当前最小的数，当有更小的数时替换
         if(t == u):
             break
-        s[t] = True
+        S[t] = True
+        print('S is  '+str(S))
+        print('add point ' + str(t) +' to S')
         # update the dist between source point n and point next to t
+        # 更新其他顶点相对S集合的距离
+        print(dist)
         for j in range(n):
-            if(not s[j] and c[t][j] < 9999):
+            if(not S[j] and c[t][j] < 9999):
                 if(dist[j] > dist[t]+c[t][j]):
                     dist[j] = dist[t]+c[t][j]
                     p[j] = t
-            print(p)
-        # print(i)
-        # print(s)
-        # print(p)
-            print(dist)
+
+        print('to '+ str(dist))
 
 
 if __name__ == '__main__':
@@ -40,11 +44,12 @@ if __name__ == '__main__':
     u = 0
     dist = [0]*n
     p = [0]*n
-    c = [[9999, 8, 32, 9999, 9999], 
-        [12,9999,16,15,9999], 
-        [9999,29,9999,13,9999],
-        [9999,21,9999,9999,7],
-        [9999,9999,27,19,9999]]
+    c = [[0, 8, 32, 9999, 9999], 
+        [12,0,16,15,9999], 
+        [9999,29,0,13,9999],
+        [9999,21,9999,0,7],
+        [9999,9999,27,19,0]]
     Dijkstra(n, u, dist, p, c)
-    # print(p)
-    # print(dist)
+    print('final')
+    print(p)
+    print(dist)
