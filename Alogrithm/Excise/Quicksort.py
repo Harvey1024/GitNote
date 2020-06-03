@@ -13,12 +13,16 @@ def Partition(A, p, r):
     i = p
     j = r
     while True:
-        while A[j] > x and j > p:
-            j = j-1
-        while A[i] <= x and i < r:
+        # find Ai > x from left side, if x is max, i ==r
+        while A[i] <= x and i<r:
             i = i+1
+        # find Aj < x from right side, if x is min, j==p
+        while A[j] > x and j>p:
+            j = j-1
         print('i = '+str(i) + ' j = '+str(j))
         print('ai = ' + str(A[i]) + ' aj = ' + str(A[j]))
+
+        # if i<j, swap, if i>=j, then find the final position of Ap, swap Ap and Aj
         if i < j:
             [A[i], A[j]] = swap(A[i], A[j])
         else:
@@ -30,11 +34,11 @@ def swap(a, b):
 
 
 if __name__ == '__main__':
-    # A = [27, 99, 0, 8, 13, 64, 86, 16, 7, 10, 88, 25, 90]
+    A = [27, 99, 0, 8, 13, 64, 86, 16, 7, 10, 88, 25, 90]
     # A = [1,1,1]
-    # A  = [1,2,3]
+    # A  = [1,2,3,4,5,6]
     # A = [3,2,1]
-    A = [1,2,3,3,2,1]
+    # A = [1,2,3,3,2,1]
     p = 0
     r = len(A)-1
     Quicksort(A, p, r)
