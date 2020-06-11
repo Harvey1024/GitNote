@@ -5,7 +5,7 @@
 '''
 
 
-def MaxGroup(n:int, E:list(list())):
+def MaxGroup(n: int, E: list(list())):
     x = [0]*n
     maxX = ''
     B = 0
@@ -19,19 +19,16 @@ def MaxGroup(n:int, E:list(list())):
                 if F > B:
                     B = F
                     maxX = str(x)
-            [i, x] = backtracking(i, x)
+            [i, x] = backtracking(i, x, B)
             print(x)
-            F = sum(x[0:i+1])+n-i-1
-            if F> B:
-                i = i+1
             if i == 0:
-                return B,maxX
+                return B, maxX
+            i = i+1
             continue
-        
+
         x[i] = Place(E, i, x)
-        
         F = sum(x[0:i+1])+n-i-1
-        i= i+1
+        i = i+1
 
 
 def Place(t, i, x):
@@ -41,14 +38,17 @@ def Place(t, i, x):
     return 1
 
 
-def backtracking(i, x):
+def backtracking(i, x, B):
     while i > 0:
         i = i-1
         if x[i] == 1:
             x[i] = 0
             for k in range(n-i-1):
                 x[k+i+1] = 0
-            break        
+            break
+    F = sum(x[0:i+1])+n-i-1
+    if F <= B and not i == 0:
+        [i, x] = backtracking(i, x, B)
     return i, x
 
 
@@ -60,6 +60,6 @@ if __name__ == '__main__':
          [1, 0, 1, 1, 1],
          [1, 1, 1, 1, 1],
          [1, 0, 1, 1, 1]]
-    [B,x] = MaxGroup(n, E)
+    [B, x] = MaxGroup(n, E)
     print('Max group node number: '+str(B))
     print('Max group = ' + x)
