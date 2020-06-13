@@ -7,7 +7,7 @@
 
 def MaxGroup(n: int, E: list(list())):
     x = [0]*n
-    maxX = ''
+    maxX = []
     B = 0
     i = 0
     F = n
@@ -18,10 +18,11 @@ def MaxGroup(n: int, E: list(list())):
                 F = sum(x[0:i+1])+n-i-1
                 if F > B:
                     B = F
-                    maxX = str(x)
-            [i, x] = backtracking(i, x, B)
-            print(x)
+                    maxX = x[:]
+            [i, x, F] = backtracking(i, x, B)
+            # print(x)
             if i == 0:
+                # print(maxX)
                 return B, maxX
             i = i+1
             continue
@@ -48,8 +49,8 @@ def backtracking(i, x, B):
             break
     F = sum(x[0:i+1])+n-i-1
     if F <= B and not i == 0:
-        [i, x] = backtracking(i, x, B)
-    return i, x
+        [i, x, F] = backtracking(i, x, B)
+    return i, x, F
 
 
 if __name__ == '__main__':
@@ -62,4 +63,4 @@ if __name__ == '__main__':
          [1, 0, 1, 1, 1]]
     [B, x] = MaxGroup(n, E)
     print('Max group node number: '+str(B))
-    print('Max group = ' + x)
+    print('Max group = ' + str(x))
