@@ -17,9 +17,9 @@
   - [x] [Process](./Java/8.Process.md)
   - [x] [Reflection](./Java/9.Reflection.md)
   - [x] [Annotion](./Java/10.Annotation.md)
-  
+
 # Software enginnering
-  - [x] [Object orig programming](./SoftwareEngineering/9.OOP.md)
+  - [x] [Object oriented programming](./SoftwareEngineering/9.OOP.md)
   - [x] [Design patterns](./SoftwareEngineering/10.DesignPatterns.md)
 
 # Design Pattern
