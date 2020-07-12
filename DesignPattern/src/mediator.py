@@ -52,7 +52,7 @@ class ConcreteColleageA(Colleage):
     def receivemsg(self, msg):
         print("A received :" + msg)
 
-    def setMediator(self, mediator):
+    def setMediator(self, mediator: Mediator):
         self._mediator = mediator
 
 
@@ -66,7 +66,7 @@ class ConcreteColleageB(Colleage):
     def receivemsg(self, msg):
         print("B received :" + msg)
 
-    def setMediator(self, mediator):
+    def setMediator(self, mediator: Mediator):
         self._mediator = mediator
 
 
