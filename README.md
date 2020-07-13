@@ -23,4 +23,17 @@
   - [x] [Design patterns](./SoftwareEngineering/10.DesignPatterns.md)
 
 # Design Pattern
-  - [x] [Start parttern](./DesignPattern/StatePattern.md)
+  - [x] [Factory parttern](./DesignPattern/StatePattern.md)
+  - [x] [Structural pattern](./DesignPattern/2.StructuralPattern.md)
+      - Adapter
+      - Bridge
+      - Decorator
+      - Facade
+      - Flyweight
+      - Proxy
+  - [x] [Behavioral pattern](./DesignPattern/3.BehavioralPattern.md)
+      - Command
+      - Mediator
+      - Observer
+      - State
+      - Strategy
