@@ -58,7 +58,12 @@ if __name__ == "__main__":
     observer1.name = "observer1"
     subject1.setState(False)
 
+    print("add new observer")
     observer2 = ConcreteObserver()
     subject1.attach(observer2)
     observer2.name = "observer2"
     subject1.setState(True)
+
+    print("del observer2")
+    subject1.detach(observer2)
+    subject1.setState(3)
