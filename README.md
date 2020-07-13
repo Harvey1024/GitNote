@@ -24,6 +24,10 @@
 
 # Design Pattern
   - [x] [Factory parttern](./DesignPattern/StatePattern.md)
+      - Factory
+      - Abstract Factory
+      - Builder
+      - Singleton
   - [x] [Structural pattern](./DesignPattern/2.StructuralPattern.md)
       - Adapter
       - Bridge
