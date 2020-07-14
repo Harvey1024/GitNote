@@ -41,3 +41,6 @@
       - Observer
       - State
       - Strategy
+      - Template method
+      - Chain of reponsibility
+      
