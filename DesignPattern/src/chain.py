@@ -1,5 +1,4 @@
 # Chain of responsibility
-# Chain of responsibility
 class RequestType:
     def __init__(self):
         self.COLLECT_TAX = None
@@ -25,3 +24,4 @@ class RequestHander:
 
     def printHandling(self, req: Request):
         pass
+
