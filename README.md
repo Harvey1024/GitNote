@@ -23,7 +23,7 @@
   - [x] [Design patterns](./SoftwareEngineering/10.DesignPatterns.md)
 
 # Design Pattern
-  - [x] [Factory parttern](./DesignPattern/StatePattern.md)
+  - [x] [Factory parttern](./DesignPattern/1.FactoryPattern.md)
       - Factory
       - Abstract Factory
       - Builder
