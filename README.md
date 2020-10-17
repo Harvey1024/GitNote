@@ -9,7 +9,7 @@
   - [x] [Introduction](./ComputerNetwork/1.Basic.md)
   - [x] [Physical Layer](./ComputerNetwork/2.PhysicalLayer.md)
   - [x] [Data link layer](./ComputerNetwork/3.DataLinkLayer.md)
-  - [x] [Network Layer](./ComputerNertwork/4.NetworkLayer.md)
+  - [x] [Network Layer](./ComputerNetwork/4.NetworkLayer.md)
   - [x] [Transport Layer](./ComputerNetwork/5.TransportLayer.md)
   - [x] [Application Layer](./ComputerNetwork/6.ApplicationLayer.md)
   - [x] [Security](./ComputerNetwork/7.Security.md)
