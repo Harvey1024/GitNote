@@ -51,3 +51,6 @@
       - Template method
       - Chain of reponsibility
       
+# Java EE
+  - [7.Hibernate3](./JavaEE/7.Hibernate3.md)
+  - [8.Spring2](./JavaEE/8.Spring.md)
