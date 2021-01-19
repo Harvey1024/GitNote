@@ -33,7 +33,7 @@ class ProjectManagerment {
       }
     }
     // 2.实例化组合项目的邻接表
-    // 每个组有自己的空间，存放前置组，
+    // 每个组有自己的空间，存放后置项目，
     List<Integer>[] groupAdj = new ArrayList[m];
     // 项目i的后置项目
     List<Integer>[] itemAdj = new ArrayList[n];
@@ -72,19 +72,29 @@ class ProjectManagerment {
     if (groupList.size() == 0) {
       return new int[0];
     }
+    System.out.println("item" + Arrays.toString(itemAdj));
+    System.out.println("indegree" + Arrays.toString(itemsIndegree));
     List<Integer> itemsList = topologicalSort(itemAdj, itemsIndegree, n);
+    System.out.println(itemsList);
     if (itemsList.size() == 0) {
       return new int[0];
     }
 
-    // 根据项目的拓扑排序结果，项目到组的多对一关系，建立组到项目的一对多关系
+    // 5. 根据项目的拓扑排序结果，项目到组的多对一关系，建立组到项目的一对多关系
     // key group, value: 同一组的项目列表
     Map<Integer, List<Integer>> grops2Items = new HashMap<>();
     for (Integer item : itemsList) {
+      // group[item]存在的话，返回get，否则，执行洗衣歌语句，并将结果put到hashMap内。
       grops2Items.computeIfAbsent(group[item], key -> new ArrayList<>()).add(item);
     }
-
-    return group;
+    // 6. 将hashmap的结果输出
+    List<Integer> res = new ArrayList<>();
+    for (int groupId : groupList) {
+      List<Integer> items = grops2Items.getOrDefault(groupId, new ArrayList<>());
+      res.addAll(items);
+    }
+    System.out.println(Arrays.toString(res.stream().toArray()));
+    return res.stream().mapToInt(Integer::valueOf).toArray();
   }
 
   public static List<Integer> topologicalSort(List<Integer>[] adj, int[] inDegree, int n) {

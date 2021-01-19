@@ -5,9 +5,10 @@
   find the goods than ship 1 load and ship 2 load.
 
 """
+from typing import List
 
 
-def Loading(w: list(int), c1: int, c2: int) -> list(list(int)):
+def Loading(w: List[int], c1: int, c2: int) -> List[List[int]]:
     w.sort()
     w.reverse()
     B = c1
@@ -39,14 +40,14 @@ def Loading(w: list(int), c1: int, c2: int) -> list(list(int)):
             continue
 
 
-def sumShip1(x: int, w: list(int)) -> int:
+def sumShip1(x: int, w: List[int]) -> int:
     sumWeight = 0
     for j in range(len(w)):
         sumWeight = sumWeight + w[j]*x[j]
     return sumWeight
 
 
-def Backtracking(i: int, w: list, B: int, x: list)->list:
+def Backtracking(i: int, w: List[int], B: int, x: List[int]) -> List[int]:
     while i > 0 and x[i] == 0:
         i = i-1
     if x[i] == 1:
