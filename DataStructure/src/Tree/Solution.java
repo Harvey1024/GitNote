@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 
 public class Solution {
   public static void main(String[] args) {
@@ -8,8 +11,9 @@ public class Solution {
     TreeNode t1 = createTree(a);
     TreeNode t2 = createTree(b);
     boolean k = isSameTree(t1, t2);
-    System.out.printf("same tree? %s %n", String.valueOf(k));
-
+    // System.out.printf("same tree? %s %n", String.valueOf(k));
+    // isSameTree2(t1, t2);
+    LevelorderTraversal(t1);
   }
 
   public static boolean isSameTree(TreeNode t1, TreeNode t2) {
@@ -24,13 +28,46 @@ public class Solution {
     }
   }
 
+  public static void InorderTraversal(TreeNode t) {
+    Stack<TreeNode> s = new Stack<>();
+
+    TreeNode kk = t;
+    while (kk != null || !s.empty()) {
+      while (kk != null) {
+        s.push(kk);
+        kk = kk.left;
+      }
+      kk = s.pop();
+      System.out.println(kk.val);
+      kk = kk.right;
+    }
+  }
+
+  public static void LevelorderTraversal(TreeNode t) {
+    Queue<TreeNode> queue = new LinkedList<>();
+    TreeNode treeNode = new TreeNode();
+    if (t == null) {
+      return;
+    }
+    queue.offer(t);
+    while (!queue.isEmpty()) {
+      treeNode = queue.poll();
+      System.out.println(treeNode.val);
+      if (treeNode.left != null) {
+        queue.offer(treeNode.left);
+      }
+      if (treeNode.right != null) {
+        queue.offer(treeNode.right);
+      }
+    }
+  }
+
   public static TreeNode createTree(int[] a) {
     int level = 0;
     double b = 0;
     while (true) {
       b = Math.pow(2, level) - 1;
       if (a.length <= b) {
-        System.out.printf("b: %s %n", String.valueOf(b));
         break;
       }
       level++;
