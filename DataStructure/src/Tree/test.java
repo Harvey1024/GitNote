@@ -1,7 +1,9 @@
+import java.util.Arrays;
+
 public class test {
 
   public static void main(String[] args) {
-    testBST();
+    testHeap();
   }
 
   public static void testBST() {
@@ -21,6 +23,15 @@ public class test {
     TreeNode tree = new TreeNode(1);
     tree = null;
     System.out.println("Hello");
+  }
+
+  public static void testHeap() {
+    Heap hp = new Heap(5);
+    int[] a = { 25, 44, 18, 10, 31, 68 };
+    for (int i = 0; i < a.length; i++) {
+      hp.insert(a[i]);
+    }
+    System.out.println(Arrays.toString(hp.data));
   }
 
 }

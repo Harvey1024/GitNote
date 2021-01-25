@@ -1,4 +1,3 @@
-import jdk.javadoc.internal.doclets.formats.html.resources.standard;
 
 public class Heap {
   int[] data;
@@ -14,4 +13,24 @@ public class Heap {
     this.data[0] = MAXDATA;
   }
 
+  public boolean insert(int x) {
+    if (isFull()) {
+      return false;
+    }
+    int i = ++size;
+    for (; data[i / 2] < x; i /= 2) {
+      data[i] = data[i / 2];
+    }
+    data[i] = x;
+    return true;
+  }
+
+  public boolean isFull() {
+    return data[capacity - 1] != 0;
+  }
+
+  public boolean deleteMax() {
+
+    return true;
+  }
 }
