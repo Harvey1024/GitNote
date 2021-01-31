@@ -49,7 +49,7 @@ public class MST {
     return minDistNo;
   }
 
-  public void kruska() {
+  public void kruskal() {
 
   }
 }
