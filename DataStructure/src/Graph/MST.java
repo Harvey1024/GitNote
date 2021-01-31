@@ -4,6 +4,7 @@ import java.util.List;
 public class MST {
   // minimum spanning tree
   int[][] data;
+  private final int INFNITY = 99;
 
   MST(int[][] data) {
     this.data = data;
@@ -50,6 +51,38 @@ public class MST {
   }
 
   public void kruskal() {
+    int n = data.length;
+    int[][] data2 = new int[n][n];
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++) {
+        data2[i][j] = INFNITY;
+      }
+    }
+    int[] dist = new int[n];
+    int[] parent = new int[n];
+    Heap minHeap = new Heap(n * n);
+    if (countEdges(data2) < n - 1) {
+      Edge k = minHeap.delete();
+      int v = k.v;
+      int w = k.w;
+      UnionFind unionFind = new UnionFind();
+      if (unionFind.find(v) != unionFind.find(w)) {
+        parent[v] = w;
+      }
+    }
 
+  }
+
+  public int countEdges(int[][] graph) {
+    int n = graph.length;
+    int edge = 0;
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++) {
+        if (graph[i][j] < INFNITY) {
+          edge++;
+        }
+      }
+    }
+    return edge;
   }
 }
