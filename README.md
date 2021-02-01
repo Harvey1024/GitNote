@@ -1,13 +1,5 @@
 # NoteBook
 
-## Algorithm
-
-- [x] [Basic](./Algorithm/1.basic.md)
-- [x] [Greedy method](./Algorithm/2.Greedy.md)
-- [x] [Divide and conquer](./Algorithm/3.DivideAndConquer.md)
-- [x] [Dynamic programming](./Algorithm/4.DynamicProgramming.md)
-- [x] [Back tracking method](./Algorithm/5.Search.md)
-
 ## Data Structure
 
 - [x] [Basic](./DataStructure/1.Basic.md)
@@ -16,6 +8,14 @@
 - [x] [Graph](./DataStructure/4.Graph.md)
 - [x] [Sort](./DataStructure/5.Sort.md)
 - [x] [Hashing](./DataStructure/6.Hashing.md)
+
+## Algorithm
+
+- [x] [Basic](./Algorithm/1.basic.md)
+- [x] [Greedy method](./Algorithm/2.Greedy.md)
+- [x] [Divide and conquer](./Algorithm/3.DivideAndConquer.md)
+- [x] [Dynamic programming](./Algorithm/4.DynamicProgramming.md)
+- [x] [Back tracking method](./Algorithm/5.Search.md)
 
 ## Computer network
 
@@ -26,6 +26,12 @@
 - [x] [Transport Layer](./ComputerNetwork/5.TransportLayer.md)
 - [x] [Application Layer](./ComputerNetwork/6.ApplicationLayer.md)
 - [x] [Security](./ComputerNetwork/7.Security.md)
+
+## Operation System
+
+- [x] [Process](./OS/2.Process.md)
+- [x] [Scheduling](./OS/3.Scheduling.md)
+- [x] [MemoryManagerment](./OS/4.MemoryManagement.md)
 
 ## Java
 
@@ -70,5 +76,11 @@
 
 # Java EE
 
+- [JDBC](./JavaEE/2.JDBC.md)
 - [7.Hibernate3](./JavaEE/7.Hibernate3.md)
 - [8.Spring2](./JavaEE/8.Spring.md)
+
+# JavaSript
+
+- [Baisc](./js/1.basic.md)
+- [Asynchronous](./js/3.asynchronous.md)
