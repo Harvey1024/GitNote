@@ -4,7 +4,7 @@ import java.util.List;
 
 public class test {
   public static void main(String[] args) {
-    minTree();
+    dijsktra();
   }
 
   public static void println(String s) {
@@ -55,6 +55,15 @@ public class test {
     System.out.println("Kruskal");
     Kruskal kruskal = new Kruskal(graph);
     kruskal.mst();
+  }
+
+  public static void dijsktra() {
+    System.out.println("Dijstra: ");
+    int[][] graph = { { 0, 6, 1, 5, 99, 99 }, { 6, 0, 5, 99, 3, 99 }, { 1, 5, 0, 5, 6, 4 }, { 5, 99, 5, 0, 99, 2 },
+        { 99, 3, 6, 99, 0, 6 }, { 99, 99, 4, 2, 6, 0 } };
+    Dijkstra dij = new Dijkstra(graph);
+    int[] k = dij.find();
+    System.out.println(Arrays.toString(k));
   }
 
 }
