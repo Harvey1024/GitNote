@@ -5,6 +5,7 @@ public class MST {
   // minimum spanning tree
   int[][] data;
   private final int INFNITY = 99;
+  int mincost;
 
   MST(int[][] data) {
     this.data = data;
@@ -25,6 +26,7 @@ public class MST {
       int m = findMinDist(dist);
       mst.add(m);
       // 距离=0 表示已经在集合内
+      mincost += dist[m];
       dist[m] = 0;
       // 更新其余点距离mst集合的距离
       for (int i = 0; i < n; i++) {
@@ -34,6 +36,7 @@ public class MST {
         }
       }
     }
+    System.out.printf("min cost: %d %n", mincost);
     return parent;
   }
 
@@ -50,39 +53,4 @@ public class MST {
     return minDistNo;
   }
 
-  public void kruskal() {
-    int n = data.length;
-    int[][] data2 = new int[n][n];
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) {
-        data2[i][j] = INFNITY;
-      }
-    }
-    int[] dist = new int[n];
-    int[] parent = new int[n];
-    Heap minHeap = new Heap(n * n);
-    if (countEdges(data2) < n - 1) {
-      Edge k = minHeap.delete();
-      int v = k.v;
-      int w = k.w;
-      UnionFind unionFind = new UnionFind();
-      if (unionFind.find(v) != unionFind.find(w)) {
-        parent[v] = w;
-      }
-    }
-
-  }
-
-  public int countEdges(int[][] graph) {
-    int n = graph.length;
-    int edge = 0;
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) {
-        if (graph[i][j] < INFNITY) {
-          edge++;
-        }
-      }
-    }
-    return edge;
-  }
 }

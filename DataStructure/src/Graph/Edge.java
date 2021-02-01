@@ -9,7 +9,8 @@ public class Edge {
     this.weight = weight;
   }
 
-  Edge() {
+  Edge(int weight) {
+    this.weight = weight;
   }
 
 }

@@ -45,9 +45,16 @@ public class test {
     int[][] graph = { { 0, 6, 1, 5, 99, 99 }, { 6, 0, 5, 99, 3, 99 }, { 1, 5, 0, 5, 6, 4 }, { 5, 99, 5, 0, 99, 2 },
         { 99, 3, 6, 99, 0, 6 }, { 99, 99, 4, 2, 6, 0 } };
     MST mst = new MST(graph);
+
+    System.out.println("Prim:");
     int[] dist = mst.prim(0);
     System.out.println(Arrays.toString(dist));
     int[] kk = { 0, 1, 2, 3, 4, 5 };
     println(Arrays.toString(kk));
+
+    System.out.println("Kruskal");
+    Kruskal kruskal = new Kruskal(graph);
+    kruskal.mst();
   }
+
 }
