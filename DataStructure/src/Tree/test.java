@@ -1,9 +1,10 @@
 import java.util.Arrays;
+import java.util.Map;
 
 public class test {
 
   public static void main(String[] args) {
-    testHeap();
+    testHuffman();
   }
 
   public static void testBST() {
@@ -34,4 +35,19 @@ public class test {
     System.out.println(Arrays.toString(hp.data));
   }
 
+  public static void testHuffman() {
+    String[] characters = { "f", "e", "c", "b", "d", "a" };
+    int[] weight = { 5, 9, 12, 13, 16, 45 };
+    String[] charCode = new String[weight.length];
+    Huffman huffman = new Huffman(weight);
+    TreeNode huffmanTree = huffman.getTree();
+    System.out.println("ok");
+    huffman.getCode(huffmanTree, true);
+    Map<Integer, String> hashMap = huffman.hashMap;
+    for (int i = 0; i < weight.length; i++) {
+      charCode[i] = hashMap.get(weight[i]);
+    }
+    System.out.println(Arrays.toString(charCode));
+
+  }
 }
