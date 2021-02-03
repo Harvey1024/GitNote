@@ -10,7 +10,6 @@ def SimpleSelectSort(a: List[int]) -> List[int]:
         swap(a, i, k)
     return a
 
-
 def findMin(a):
     minA = a[0]
     k = 0

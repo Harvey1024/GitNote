@@ -1,6 +1,8 @@
+import java.util.Arrays;
+
 public class test {
   public static void main(String[] args) {
-    sort();
+    quickSort();
   }
 
   public static void search() {
@@ -11,8 +13,17 @@ public class test {
   }
 
   public static void sort() {
-    int[] a = { 35, 52, 85 };
+    // 二分归并排序
+    int[] a = { 0, 6, 2, 1 };
     Sort sort = new Sort(a);
-    sort.merge(0, 1, 2);
+    sort.sort(0, a.length - 1);
+    // System.out.println(Arrays.toString(sort.data));
+  }
+
+  public static void quickSort() {
+    int[] a = { 49, 38, 65, 97, 76, 13, 27 };
+    Sort sort = new Sort(a);
+    sort.quickSort2(0, a.length - 1);
+    System.out.println(Arrays.toString(sort.data));
   }
 }
