@@ -15,12 +15,12 @@ public class CommonSubsequence {
     int m = list1.length + 1;
     int[][] c = new int[n][m];
     int[][] b = new int[n][m];
-    for (int i = 0; i < n; i++) {
-      c[i][0] = 0;
-    }
-    for (int i = 0; i < m; i++) {
-      c[0][i] = 0;
-    }
+    // for (int i = 0; i < n; i++) {
+    // c[i][0] = 0;
+    // }
+    // for (int i = 0; i < m; i++) {
+    // c[0][i] = 0;
+    // }
     for (int i = 1; i < n; i++) {
       for (int j = 1; j < m; j++) {
         if (list0[i - 1] == list1[j - 1]) {
