@@ -1,9 +1,38 @@
 import java.util.Arrays;
 
+import javax.crypto.Mac;
+
 public class test {
   public static void main(String[] args) {
     // maxComList();
-    knapSack();
+    // knapSack();
+
+    String s = "krrgw";
+    String t = "zjxss";
+    int[] diff = new int[s.length()];
+    for (int i = 0; i < s.length(); i++) {
+      diff[i] = 19 - Math.abs((int) s.charAt(i) - (int) t.charAt(i));
+    }
+    System.out.println(Arrays.toString(diff));
+    int maxCost = 19;
+    int k = 0;
+    int maxk = 0;
+    for (int j = 0; j < s.length(); j++) {
+      k = 0;
+      maxCost = 19;
+      for (int i = j; i < s.length(); i++) {
+        int cost = (int) s.charAt(i) - (int) t.charAt(i);
+        if (maxCost - Math.abs(cost) >= 0) {
+          maxCost -= Math.abs(cost);
+          k++;
+        } else {
+          break;
+        }
+      }
+      maxk = Math.max(maxk, k);
+    }
+    System.out.println(maxk);
+
   }
 
   public static void maxComList() {
