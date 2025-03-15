@@ -21,3 +21,16 @@
   - u 撤销上一个操作
 
 # Linux 基本操作
+- mkdir: create folder
+- touch : create file
+- rm: delete file or folder
+- rmdir: remove empty folder
+
+# Log operation
+- tail
+  - tail -f filename : 循环读取文件
+  - tail filename: 默认最后10行
+- grep 在文件中查找特定模式
+  - grep "example" *.txt 在当前目录搜索
+  - grep -r "example" *.txt 在当前目录及子目录搜索
+
